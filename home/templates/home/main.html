@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>{{ settings.APP_NAME }}</title>
+</head>
+<body>
+    <h1>Welcome to {{ settings.APP_NAME }}</h1>
+    <p>
+    <ul>
+        <li>
+            <h3><a href={% url 'ads:all' %}>Ads</a></h3>
+        </li>
+         <li>
+            <h3><a href={% url 'autos:all' %}>Autos</a></h3>
+        </li>
+         <li>
+            <h3><a href={% url 'polls:index' %}>Polls</a></h3>
+        </li>
+         <li>
+            <h3><a href={% url 'cats:all' %}>Cats</a></h3>
+        </li>
+    </ul>
+    </p>
+</body>
+</html>
