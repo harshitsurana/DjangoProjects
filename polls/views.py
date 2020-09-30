@@ -11,7 +11,7 @@ class IndexView(ListView):
 
     def get_queryset(self):
         """Return the last five published questions."""
-        return Question.objects
+        return Question.objects.order_by('-pub_date')[:5]
 
 
 class DetailView(DetailView):
@@ -34,7 +34,7 @@ def vote(request, question_id):
             'error_message': "You didn't select a choice.",
         })
     else:
-        selected_choice.votes
+        selected_choice.votes += 1
         selected_choice.save()
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
